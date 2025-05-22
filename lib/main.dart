@@ -1,0 +1,53 @@
+import 'package:corrier/utils/app_colors.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+import 'utils/splash_screen.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
+}
+
+
+
+class MyApp extends StatelessWidget {
+
+
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var setPreferredOrientations = SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return ScreenUtilInit(
+      designSize: const Size(360, 760),
+      minTextAdapt: false,
+      splitScreenMode: false,
+      builder: (context, child) {
+        return GetMaterialApp(
+          title: 'Aabio', // Keeping the original app name
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primaryColor: AppColors.primary, // Keeping the original theme
+            useMaterial3: true,
+          ),
+
+          fallbackLocale: const Locale('EN'),
+          home: MediaQuery(
+            data: MediaQuery.of(context).copyWith(
+              textScaler: TextScaler.noScaling,
+            ),
+            child: child!,
+          ), // Adjusted to pass isFirstTime
+
+        );
+      },
+      child: SplashScreen(),
+    );
+  }
+}

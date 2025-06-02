@@ -18,8 +18,8 @@ class AppColors {
   static const whiteSplash = Colors.white12;
   static const primarySplash = Color.fromARGB(118, 96, 126, 166);
   static const darkRed = Color(0xffFEF2F2);
-  static const grey = Color(0XFF949494);
-  static const darkGrey = Color(0xff333333);
+  static const grey = Color.fromRGBO(112, 112, 112, 1);
+  static const darkGrey = Color(0xff455A64);
   static const lightGrey = Color.fromARGB(255, 191, 198, 206);
   static const grey2 = Color.fromRGBO(112, 112, 112, 0.2);
   static const red = Color.fromRGBO(208, 19, 19, 0.99);
@@ -30,6 +30,8 @@ class AppColors {
   static const purple = Color(0xffAA60C8);
   static const lightPurple = Color(0xffF8F2FB);
   static const lightParrot = Color(0xffEFF6F4);
+  static const containerGradient1 = Color.fromRGBO(246, 163, 22, 1);
+  static const containerGradient2 = Color.fromRGBO(208, 19, 19, 1);
 
   static const MaterialColor primarySwatch = MaterialColor(
     0xff313755,

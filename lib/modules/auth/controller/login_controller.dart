@@ -2,12 +2,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../customer/dashboard/views/bottom_nav.dart';
+
 class LoginController extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
   void login() {
+    Get.offAll(() => BottomNav(pageIndex: 0));
     // Add login logic here
-    print("Email: ${emailController.text}, Password: ${passwordController.text}");
+    print(
+      "Email: ${emailController.text}, Password: ${passwordController.text}",
+    );
   }
 }

@@ -76,7 +76,7 @@ class ProfileVerificationStep4 extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20.h),
-            CustomButton(
+            AppButton(
               text: 'Back to homepage',
               onPressed: () {
                 Get.to(()=> AuthScreen());

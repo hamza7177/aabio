@@ -71,7 +71,7 @@ class ValidationSuccessScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 20.h),
-            CustomButton(
+            AppButton(
               text: 'Start verification',
               onPressed: () {
                 Get.to(()=> ProfileVerificationStep1Screen());

@@ -68,7 +68,7 @@ class RegistrationScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 20.h),
-              CustomButton(text: 'Next', onPressed: (){
+              AppButton(text: 'Next', onPressed: (){
                 Get.to(()=> OtpVerification());
               }),
               SizedBox(height: 20.h), // Added to ensure bottom content is scrollable

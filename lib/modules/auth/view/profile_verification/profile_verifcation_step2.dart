@@ -85,7 +85,7 @@ class ProfileVerificationStep2Screen extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
               SizedBox(height: 20.h),
-              CustomButton(
+              AppButton(
                 text: 'Validate',
                 onPressed: () {
                   Get.to(() => ProfileVerificationStep3Screen());

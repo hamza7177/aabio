@@ -52,7 +52,7 @@ class ProfileVerificationStep1Screen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             Spacer(),
-            CustomButton(
+            AppButton(
               text: 'Start verification',
               onPressed: () {
                 Get.to(() => ProfileVerificationStep2Screen());

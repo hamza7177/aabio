@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'dashbaord_screen.dart';
+
+class BottomNavBar extends StatefulWidget {
+  @override
+  _BottomNavBarState createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int _selectedIndex = 0;
+
+  static List<Widget> _widgetOptions = <Widget>[
+    HomeScreen(),
+    const Center(child: Text('Requests Screen')),
+    const Center(child: Text('Routes Screen')),
+    const Center(child: Text('Messaging Screen')),
+    const Center(child: Text('Account Screen')),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      body: Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 2.0.w,vertical: 14.h),
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.request_page), label: 'Requests'),
+          BottomNavigationBarItem(icon: Icon(Icons.route), label: 'Routes'),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Messaging'),
+          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Account'),
+        ],
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.grey,
+      ),
+    );
+  }
+}

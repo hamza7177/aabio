@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../utils/app_text_style.dart';
+
+class OngogingMessageList extends StatelessWidget {
+  const OngogingMessageList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+      children: [
+        Center(
+          child: Image.asset('assets/images/empty_chat.png', height: 200.h),
+        ),
+        // Add more widgets for Accepted requests here
+        Center(child: Text('No discussions in progress', style: AppTextStyle.boldBlack22)),
+        Center(
+          child: Text(
+            'Here you will find all your private discussions with your customers after their reservations to agree details on meeting places, parcels and the recipient upon arrival',
+            style: AppTextStyle.regularGrey14,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        SizedBox(height: 30.h),
+      ],
+    );
+  }
+}

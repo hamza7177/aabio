@@ -69,7 +69,7 @@ class OtpVerification extends StatelessWidget {
                 textAlign: TextAlign.justify,
               ),
               SizedBox(height: 20.h),
-              CustomButton(text: 'Next', onPressed: (){
+              AppButton(text: 'Next', onPressed: (){
                 Get.to(()=> PinCodeScreen());
               }),
               SizedBox(height: 20.h),

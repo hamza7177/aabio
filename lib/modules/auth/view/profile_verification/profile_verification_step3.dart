@@ -69,7 +69,7 @@ class ProfileVerificationStep3Screen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 20.h),
-              CustomButton(
+              AppButton(
                 text: 'Next',
                 onPressed: () {
                   Get.to(()=> ProfileVerificationStep4());

@@ -1,0 +1,77 @@
+import 'package:corrier/modules/auth/widgets/small_button.dart';
+import 'package:corrier/utils/app_colors.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../utils/app_text_style.dart';
+
+class ReceiptModificationSheet extends StatelessWidget {
+  final String date;
+  final String location;
+  final String weight;
+
+  const ReceiptModificationSheet({
+    super.key,
+    required this.date,
+    required this.location,
+    required this.weight,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: AppColors.white,
+      padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 16.0.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        // Ensures the sheet takes only the needed height
+        children: [
+          Text('Modify the kilos', style: AppTextStyle.mediumBlack16),
+          const SizedBox(height: 16),
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Available kg',
+              filled: true,
+              fillColor: Colors.grey[200],
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8.r),
+                borderSide: BorderSide.none,
+              ),
+            ),
+            controller: TextEditingController(
+              text: weight.replaceAll('kg', ''),
+            ),
+            readOnly: true, // Make it read-only to mimic the image
+          ),
+          const SizedBox(height: 24),
+          Text('Edit price', style: AppTextStyle.regularBlack14),
+
+          SizedBox(height: 16.h),
+          TextField(
+            decoration: InputDecoration(
+              hintText: '12 €',
+              filled: true,
+              fillColor: Colors.grey[200],
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide.none,
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          const Text(
+            'Maximum price set at €12',
+            style: TextStyle(fontSize: 12, color: Colors.grey),
+          ),
+          const SizedBox(height: 16),
+         SmallButton(text: 'Valid', onPressed: (){
+           Navigator.pop(context);
+         }),
+
+          const SizedBox(height: 16),
+        ],
+      ),
+    );
+  }
+}

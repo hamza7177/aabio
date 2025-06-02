@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../controller/login_controller.dart';
-import '../widgets/app_button.dart' show CustomButton;
+import '../widgets/app_button.dart' show AppButton;
 
 class LoginScreen extends StatelessWidget {
   final LoginController controller = Get.put(LoginController());
@@ -50,7 +50,7 @@ class LoginScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             Spacer(),
-            CustomButton(text: 'Login', onPressed: controller.login),
+            AppButton(text: 'Login', onPressed: controller.login),
             SizedBox(height: 10.h),
             Align(
               alignment: Alignment.centerLeft,

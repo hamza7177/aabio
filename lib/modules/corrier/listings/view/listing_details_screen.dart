@@ -1,0 +1,352 @@
+import 'package:corrier/modules/auth/widgets/small_button.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../utils/app_colors.dart';
+import '../../../../utils/app_text_style.dart';
+import 'recipt_modification_screen.dart';
+
+class ListingDetailsScreen extends StatelessWidget {
+  final String date;
+  final String from;
+  final String to;
+  final String weight;
+  final String rate;
+  final String time;
+
+  const ListingDetailsScreen({
+    Key? key,
+    required this.date,
+    required this.from,
+    required this.to,
+    required this.weight,
+    required this.rate,
+    required this.time,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.white,
+      appBar: AppBar(
+        surfaceTintColor: AppColors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+        centerTitle: true,
+        title: Text('Details', style: AppTextStyle.boldPrimary18),
+        backgroundColor: AppColors.white,
+        elevation: 0,
+      ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Toggle Button (Using the ToggleButton2 from your previous message)
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 16.h,
+                    ),
+                    height: 92.h,
+                    width: 160.w,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/icons/container_bg.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 8.0.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(Icons.flight_takeoff, color: AppColors.white),
+                          SizedBox(height: 10.h),
+                          Text(
+                            to,
+                            style: AppTextStyle.mediumPrimary14.copyWith(
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  '→',
+                  style: TextStyle(fontSize: 22, color: AppColors.primary),
+                ),
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 16.h,
+                    ),
+                    height: 92.h,
+                    width: 160.w,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/icons/container_bg.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 8.0.w, right: 8.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(Icons.flight_land, color: AppColors.white),
+                          SizedBox(height: 10.h),
+                          Text(
+                            from,
+                            style: AppTextStyle.mediumPrimary14.copyWith(
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16.h),
+            // Price per kg
+            Center(
+              child: Text(
+                '€6/kg',
+                style: AppTextStyle.mediumBlack16.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            SizedBox(height: 16.h),
+            // Flight Information Section
+            Text('Flight Information', style: AppTextStyle.boldBlack16),
+            SizedBox(height: 8.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Departure Date", style: AppTextStyle.mediumGrey16),
+                    Text(date, style: AppTextStyle.mediumBlack18),
+                  ],
+                ),
+                Icon(Icons.arrow_forward, color: AppColors.primary),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Check-in Date", style: AppTextStyle.mediumGrey16),
+                    Text(date, style: AppTextStyle.mediumBlack18),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 16.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Check-out time", style: AppTextStyle.mediumGrey16),
+                    Text(time, style: AppTextStyle.mediumBlack18),
+                  ],
+                ),
+                Icon(Icons.arrow_forward, color: AppColors.primary),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Check-in time", style: AppTextStyle.mediumGrey16),
+                    Text(time, style: AppTextStyle.mediumBlack18),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 16.h),
+
+            // Guest Verification Section
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('GUEST VERIFIED', style: AppTextStyle.boldBlack16),
+                Row(
+                  children: [
+                    Icon(Icons.star, color: Colors.red, size: 16),
+                    Icon(Icons.star, color: Colors.red, size: 16),
+                    Icon(Icons.star, color: Colors.red, size: 16),
+                    Icon(Icons.star_border, color: Colors.red, size: 16),
+                    Icon(Icons.star_border, color: Colors.red, size: 16),
+                    SizedBox(width: 8.w),
+                    Text('Abu', style: AppTextStyle.mediumGrey12),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 8.h),
+            Row(
+              children: [
+                Icon(Icons.verified, color: Colors.green),
+                SizedBox(width: 8.w),
+                Text('Professional GP', style: AppTextStyle.mediumGrey12),
+              ],
+            ),
+            SizedBox(height: 16.h),
+            // Shipping Price Section
+            Text('SHIPPING PRICE', style: AppTextStyle.boldBlack16),
+            SizedBox(height: 8.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Luggage', style: AppTextStyle.mediumBlack14),
+                Text('6 €', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Fragile', style: AppTextStyle.mediumBlack14),
+                Text('14 €', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Equipment', style: AppTextStyle.mediumBlack14),
+                Text('18 €', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Medicine', style: AppTextStyle.mediumBlack14),
+                Text('30 €', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Phone', style: AppTextStyle.mediumBlack14),
+                Text('40 €', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            SizedBox(height: 16.h),
+            // Guest Requirements Section
+            Text('GUEST REQUIREMENTS', style: AppTextStyle.boldBlack16),
+            SizedBox(height: 8.h),
+            Text(
+              'Required – Must be Packed Securely and\nUnopened – No Damage on the Package',
+              style: AppTextStyle.mediumGrey12,
+            ),
+            SizedBox(height: 8.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Documents', style: AppTextStyle.mediumBlack14),
+                Text('Laptops', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Shoes', style: AppTextStyle.mediumBlack14),
+                Text('Toys', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Bags', style: AppTextStyle.mediumBlack14),
+                Text('Clothing', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Dolls', style: AppTextStyle.mediumBlack14),
+                Text('Chain or Keyboards', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            SizedBox(height: 16.h),
+            // Package Details Section
+            Text('PACKAGE DETAILS', style: AppTextStyle.boldBlack16),
+            SizedBox(height: 8.h),
+            Text(
+              'All packages will be checked. Guest has the\nright to open package or not to carry.',
+              style: AppTextStyle.mediumGrey12,
+            ),
+            SizedBox(height: 8.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Package Density', style: AppTextStyle.mediumBlack14),
+                Text('Heavy', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Departure Date', style: AppTextStyle.mediumBlack14),
+                Text('Include', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Room', style: AppTextStyle.mediumBlack14),
+                Text('Antibiotics', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Antibiotics', style: AppTextStyle.mediumBlack14),
+                Text('2 Antibiotics', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Others', style: AppTextStyle.mediumBlack14),
+                Text('Bar', style: AppTextStyle.mediumBlack14),
+              ],
+            ),
+            SizedBox(height: 16.h),
+            // Book Button
+            SizedBox(
+              width: double.infinity,
+              child: SmallButton(text: 'Edit your listing', onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true, // Allows the sheet to expand if needed
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                  ),
+                  builder: (context) => ReceiptModificationSheet(
+                    date: 'Saturday May 25, 2023',
+                    location: 'Ljubljana, Slovenia',
+                    weight: weight,
+                  ),
+                );
+              }),
+            ),
+            SizedBox(height: 16.h),
+            // Additional Details Link
+
+          ],
+        ),
+      ),
+    );
+  }
+}

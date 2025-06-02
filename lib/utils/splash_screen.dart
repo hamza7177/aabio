@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../modules/auth/view/auth_screen.dart';
 import '../modules/auth/view/login_screen.dart';
+import '../modules/on_boarding/views/on_boarding_screen.dart';
 import 'app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen>
   Future<void> _navigateToNextScreen() async {
     // Wait for at least 3 seconds to show the splash screen
     await Future.delayed(const Duration(seconds: 3));
-    Get.offAll(() => AuthScreen());
+    Get.offAll(() => OnboardingScreen());
     // Navigate based on isFirstTime
     // if (widget.isFirstTime) {
     //   // Update SharedPreferences to mark that the user has seen the onboarding

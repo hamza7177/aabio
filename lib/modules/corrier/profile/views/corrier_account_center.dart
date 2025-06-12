@@ -9,6 +9,7 @@ import '../../../customer/request/widgets/top_container.dart';
 import '../../packages_delivery/views/packages_list_screen.dart';
 import '../../payment/views/payment_list_screen.dart';
 import 'settings.dart';
+import 'switch_to_customer_mode.dart';
 
 class CorrierAccountCenter extends StatelessWidget {
   const CorrierAccountCenter({super.key});
@@ -202,7 +203,7 @@ class CorrierAccountCenter extends StatelessWidget {
           SizedBox(height: 20.h),
           GestureDetector(
             onTap: () {
-              Get.to(() => BottomNav(pageIndex: 0));
+              Get.to(() => SwitchToCustomerMode());
             },
             child: Container(
               padding: EdgeInsets.all(10.w),
@@ -281,51 +282,51 @@ class CorrierAccountCenter extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20.h),
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(10.w),
-              decoration: BoxDecoration(
-                color: Color(0xff5D5167),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Africa-China-Europe Freight\nForwarder',
-                        style: AppTextStyle.mediumBlack14.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                      SizedBox(height: 10.h),
-                      Text(
-                        'Our freight forwarding partners\navailable for your large packages ',
-                        style: AppTextStyle.regularGrey12.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                      SizedBox(height: 10.h),
-                      Text(
-                        'Contact us',
-                        style: AppTextStyle.regularGrey12.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Spacer(),
-                  Image.asset(
-                    'assets/images/ship.png',
-                    width: 80.w,
-                    height: 80.h,
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // GestureDetector(
+          //   onTap: () {},
+          //   child: Container(
+          //     padding: EdgeInsets.all(10.w),
+          //     decoration: BoxDecoration(
+          //       color: Color(0xff5D5167),
+          //       borderRadius: BorderRadius.circular(10),
+          //     ),
+          //     child: Row(
+          //       children: [
+          //         Column(
+          //           crossAxisAlignment: CrossAxisAlignment.start,
+          //           children: [
+          //             Text(
+          //               'Africa-China-Europe Freight\nForwarder',
+          //               style: AppTextStyle.mediumBlack14.copyWith(
+          //                 color: Colors.white,
+          //               ),
+          //             ),
+          //             SizedBox(height: 10.h),
+          //             Text(
+          //               'Our freight forwarding partners\navailable for your large packages ',
+          //               style: AppTextStyle.regularGrey12.copyWith(
+          //                 color: Colors.white,
+          //               ),
+          //             ),
+          //             SizedBox(height: 10.h),
+          //             Text(
+          //               'Contact us',
+          //               style: AppTextStyle.regularGrey12.copyWith(
+          //                 color: Colors.white,
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //         Spacer(),
+          //         Image.asset(
+          //           'assets/images/ship.png',
+          //           width: 80.w,
+          //           height: 80.h,
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

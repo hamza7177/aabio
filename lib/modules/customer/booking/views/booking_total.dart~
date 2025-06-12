@@ -139,7 +139,7 @@ class BookingTotal extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Laptop x 1', style: AppTextStyle.regularGrey12),
-                    Text('1pc\n€6', style: AppTextStyle.regularBlack12),
+                    Text('!pc\n€6', style: AppTextStyle.regularBlack12),
                   ],
                 ),
                 Row(

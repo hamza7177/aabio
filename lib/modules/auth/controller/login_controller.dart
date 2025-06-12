@@ -9,7 +9,7 @@ class LoginController extends GetxController {
   final passwordController = TextEditingController();
 
   void login() {
-    Get.offAll(() => BottomNav(pageIndex: 0));
+    Get.offAll(() => BottomNav(pageIndex: 0, isFromLogin: true));
     // Add login logic here
     print(
       "Email: ${emailController.text}, Password: ${passwordController.text}",

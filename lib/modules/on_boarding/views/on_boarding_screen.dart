@@ -21,7 +21,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Future<void> completeOnboarding() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('isFirstTime', false);
-    Get.offAll(() => BottomNav(pageIndex: 0,));
+    Get.offAll(() => BottomNav(pageIndex: 0,isFromLogin: false,));
   }
 
   @override

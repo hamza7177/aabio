@@ -87,7 +87,7 @@ class PaymentSuccessScreen extends StatelessWidget {
               AppButton(
                 text: 'Go to Home',
                 onPressed: () {
-                  Get.offAll(()=> BottomNav(pageIndex: 0,));
+                  Get.offAll(()=> BottomNav(pageIndex: 0,isFromLogin: true,));
                 },
               ),
               SizedBox(height: 10.h),

@@ -316,10 +316,10 @@ class RequestDetailsScreen extends StatelessWidget {
 
             SizedBox(height: 16.h),
             // Book Button
-            // SizedBox(
-            //   width: double.infinity,
-            //   child: AppButton(text: 'Cancel my request', onPressed: () {}),
-            // ),
+            SizedBox(
+              width: double.infinity,
+              child: AppButton(text: 'Cancel my request', onPressed: () {}),
+            ),
             SizedBox(height: 16.h),
 
             // Additional Details Link

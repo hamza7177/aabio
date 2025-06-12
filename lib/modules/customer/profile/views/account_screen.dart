@@ -12,6 +12,7 @@ import 'become_a_partner.dart';
 import 'help_center.dart';
 import 'identify_document_Screen.dart';
 import 'my_bank_info.dart';
+import 'switch_to_taverller_mode.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -155,7 +156,7 @@ class AccountScreen extends StatelessWidget {
           // Become a Pro Partner Section
           GestureDetector(
             onTap: (){
-              Get.to(()=> CorrierBottomNav(pageIndex: 0));
+              Get.to(()=> SwitchToTravellerMode());
             },
             child: Container(
               padding: EdgeInsets.all(10.w),
@@ -199,20 +200,20 @@ class AccountScreen extends StatelessWidget {
           // Other Section
           Text('Other', style: AppTextStyle.mediumBlack16),
           SizedBox(height: 10.h),
-          ListTile(
-            leading: Image.asset(
-              'assets/icons/Search.png',
-              width: 30.w,
-              height: 30.h,
-            ),
-            title: Text(
-              'Find a Freight Forwarder with Aabio',
-              style: AppTextStyle.mediumBlack16,
-            ),
-            onTap: () {},
-          ),
-          SizedBox(height: 5.h),
-          Divider(),
+          // ListTile(
+          //   leading: Image.asset(
+          //     'assets/icons/Search.png',
+          //     width: 30.w,
+          //     height: 30.h,
+          //   ),
+          //   title: Text(
+          //     'Find a Freight Forwarder with Aabio',
+          //     style: AppTextStyle.mediumBlack16,
+          //   ),
+          //   onTap: () {},
+          // ),
+          // SizedBox(height: 5.h),
+          // Divider(),
           ListTile(
             leading: Image.asset(
               'assets/icons/Help.png',

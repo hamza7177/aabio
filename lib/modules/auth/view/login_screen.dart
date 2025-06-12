@@ -1,4 +1,3 @@
-import 'package:corrier/modules/auth/view/registration_screen.dart';
 import 'package:corrier/modules/auth/widgets/app_textfield.dart';
 import 'package:corrier/utils/app_colors.dart';
 import 'package:corrier/utils/app_text_style.dart';
@@ -6,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../customer/dashboard/views/bottom_nav.dart';
 import '../controller/login_controller.dart';
 import '../widgets/app_button.dart' show AppButton;
 
@@ -17,7 +17,9 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-          backgroundColor: AppColors.white, title: Text('', style: AppTextStyle.mediumGrey12)),
+        backgroundColor: AppColors.white,
+        title: Text('', style: AppTextStyle.mediumGrey12),
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -55,11 +57,11 @@ class LoginScreen extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: TextButton(
-                onPressed: () => Get.to(() => RegistrationScreen()),
-                child: Text(
-                  "Don't have an account? Register",
-                  style: AppTextStyle.mediumBlack14,
-                ),
+                onPressed:
+                    () => Get.to(
+                      () => BottomNav(pageIndex: 0, isFromLogin: false),
+                    ),
+                child: Text("Continue as a guest", style: AppTextStyle.mediumBlack14),
               ),
             ),
           ],

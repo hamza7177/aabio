@@ -186,6 +186,7 @@ class SetSellingPriceScreen extends StatelessWidget {
                     ),
                     AppTextField(
                       labelText: '10',
+                      readOnly: true,
                       controller: TextEditingController(),
                     ),
                   ],
@@ -201,6 +202,7 @@ class SetSellingPriceScreen extends StatelessWidget {
                     ),
                     AppTextField(
                       labelText: '10',
+                      readOnly: true,
                       controller: TextEditingController(),
                     ),
                   ],
@@ -220,6 +222,7 @@ class SetSellingPriceScreen extends StatelessWidget {
                     ),
                     AppTextField(
                       labelText: '10',
+                      readOnly: true,
                       controller: TextEditingController(),
                     ),
                   ],
@@ -236,7 +239,7 @@ class SetSellingPriceScreen extends StatelessWidget {
             '*Prices for special items are fixed and do not sell per Kilo',
             style: AppTextStyle.regularGrey12,
           ),
-          Spacer(),
+         SizedBox(height: 20.h,),
           SmallButton(text: 'Next', onPressed: () {
             Get.to(()=> ChoosePackagesScreen());
           }),
